@@ -44,7 +44,7 @@ def login(item: OAuth2PasswordRequestForm = Depends()):
         access_token = create_access_token(data={"sub": item.username})
         insert_row = {"username": item.username, "jwt_token": access_token}
         insert(session_table, insert_row)
-        return {"access_token": access_token, "msg": "Logged in"}
+        return {"username": item.username, "access_token": access_token, "msg": "Logged in"}
     else:
         return {"detail": "Invalid credentials / user doesn't exist"}
 

@@ -31,6 +31,7 @@ class SignUpResponse(BaseModel):
 
 
 class LoginResponse(BaseModel):
+    username: str
     access_token: str
     msg: str
 
