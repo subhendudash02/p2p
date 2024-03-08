@@ -15,7 +15,7 @@ function createCookie(name,value,minutes) {
     document.cookie = name+"="+value+expires+"; path=/";
 }
 
-let backend = "https://unity-johnson-rapidly-sale.trycloudflare.com/";
+let backend = "http://localhost:8000/";
 
 form.addEventListener('submit', async event => {
     event.preventDefault();

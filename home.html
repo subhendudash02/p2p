@@ -6,8 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>You are logged in</h1>
     <p id="name"></p>
+
+    <form id="form">
+        <p>Storage Units</p><input type="text" id="energy_units" placeholder="Energy in units"><br>
+        <p>Load Forecast</p><input type="text" id="energy_forecast" placeholder="Energy in units"><br>
+        <p>Profit Preference</p><input type="range" min="0" max="100" value="50" id="profit_pref"><br>
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
 </body>
     <script src="scripts/home.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>

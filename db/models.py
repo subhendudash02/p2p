@@ -18,4 +18,13 @@ session_table = db.Table(
     db.Column("jwt_token", db.String, unique=True),
 )
 
+energy_table = db.Table(
+    "energy",
+    meta,
+    db.Column("username", db.String, db.ForeignKey("user.username")),
+    db.Column("storageUnits", db.Float),
+    db.Column("loadForecast", db.Float),
+    db.Column("profitPref", db.Float),
+)
+
 meta.create_all(engine)

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import auth
+from routes import auth, energy
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -21,3 +21,4 @@ def read_root():
     return {"Hello": "World"}
 
 app.include_router(auth.auth_router)
+app.include_router(energy.energy_router)
