@@ -25,6 +25,21 @@ energy_table = db.Table(
     db.Column("storageUnits", db.Float),
     db.Column("loadForecast", db.Float),
     db.Column("profitPref", db.Float),
+    db.Column("ratingPref", db.Float),
+    db.Column("type", db.String)
+)
+
+solar_table = db.Table(
+    "solar",
+    meta,
+    db.Column("username", db.String, db.ForeignKey("user.username")),
+    db.Column("solarUnits", db.Float)
 )
 
 meta.create_all(engine)
+
+ins = db.insert(solar_table).values({"username": "subhendu", "solarUnits": 100})
+
+with engine.connect() as conn:
+    conn.execute(ins)
+    conn.commit()
