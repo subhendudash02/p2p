@@ -1,0 +1,32 @@
+#form {
+    margin: auto;
+}
+
+#heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#submitbtn {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 8%;
+}
+
+#username, #password, #email {
+    margin-bottom: 1%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ACACAC;
+    background-color: #DADADA;
+    color: black;
+}
+
+#tb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

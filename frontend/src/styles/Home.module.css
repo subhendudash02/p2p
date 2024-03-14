@@ -1,0 +1,36 @@
+#energy_units, #energy_forecast {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ACACAC;
+    background-color: #DADADA;
+    color: black;
+}
+
+#formquery {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#form {
+    margin: auto;
+}
+
+#tb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#submitbtn {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 8%;
+}
+
+#username {
+    color: white
+}
