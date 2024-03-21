@@ -64,3 +64,12 @@ def get_current_user():
         return None
 
     return get_username(token)
+
+def get_user_id(username: str):
+    valid_row = db.select(user_table).where(user_table.c.username == username)
+
+    with engine.connect() as conn:
+        for r in conn.execute(valid_row):
+            user_id = r[0]
+
+    return user_id

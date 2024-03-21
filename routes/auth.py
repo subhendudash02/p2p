@@ -5,12 +5,11 @@ Routes for all authentication related endpoints
 from fastapi import APIRouter, Depends, HTTPException
 from schemas.auth import *
 from auth.password import *
-from db.models import user_table, session_table
+from db.models import user_table, session_table, energy_table
 from db.operations import *
 from db.auth import *
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from auth.jwt import create_access_token
-from uuid import uuid4
 
 auth_router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -26,8 +25,8 @@ def register(item: SignUpData):
 
     user_data = item.dict()
     user_data["password"] = hash_password(item.password)
-    user_data["ID"] = str(uuid4())
     insert(user_table, user_data)
+    update(energy_table, get_user_id(item.username), {"username": item.username})
 
     return {
         "username": item.username,

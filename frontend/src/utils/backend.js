@@ -1,1 +1,1 @@
-export const backend_link = "https://jungle-researchers-waterproof-making.trycloudflare.com"
+export const backend_link = "https://retailer-arbitration-funk-sphere.trycloudflare.com"

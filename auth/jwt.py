@@ -34,5 +34,8 @@ def is_token_valid(token: str) -> bool:
 
 
 def get_username(token: str) -> bool:
-    payload = jwt.decode(token, secret_key, algorithms=["HS256"])
-    return payload.get("sub")
+    try:
+        payload = jwt.decode(token, secret_key, algorithms=["HS256"])
+        return payload.get("sub")
+    except jwt.ExpiredSignatureError:
+        print("Invalid token")

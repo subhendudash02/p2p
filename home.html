@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar scroll</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+              <a class="nav-link active" aria-current="page" href="#" id="name">Home</a>
+              <button class="btn btn-outline-success" type="submit" id="logout" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </nav>  
+
     <p id="name"></p>
 
     <form id="form">
-        <p>Storage Units</p><input type="text" id="energy_units" placeholder="Energy in units"><br>
-        <p>Load Forecast</p><input type="text" id="energy_forecast" placeholder="Energy in units"><br>
-        <p>Profit Preference</p><input type="range" min="0" max="100" value="50" id="profit_pref"><br>
-        <button type="submit" id="submit-btn">Submit</button>
+        <div id="tb">
+            <b id="form-query">Storage Units</b>
+            <input type="text" id="energy_units" placeholder="Energy in units"><br>
+            <b id="form-query">Load Forecast</b>
+            <input type="text" id="energy_forecast" placeholder="Energy in units"><br>
+            <b id="form-query">Profit Preference</b>
+            <input type="range" min="0" max="100" value="50" id="profit_pref"><br>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
     </form>
 </body>
     <script src="scripts/home.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
